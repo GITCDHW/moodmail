@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodMail - Master Your Message</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS Custom Configuration (for animations) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Custom keyframes for fade-in-up animation
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                    // Custom animation utility
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Ensuring smooth scroll for anchor links. This is a browser-level property, not custom component CSS. */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Header/Navbar Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">MoodMail</a>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="text-gray-600 hover:text-indigo-600 transition duration-300">Features</a>
+                <a href="#cta-section" class="text-gray-600 hover:text-indigo-600 transition duration-300">Get Started</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-indigo-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (initially hidden) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg pb-4">
+            <a href="#features" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition duration-300">Features</a>
+            <a href="#cta-section" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition duration-300">Get Started</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-20 md:py-32 flex items-center justify-center overflow-hidden">
+            <div class="container mx-auto px-4 text-center max-w-4xl">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 opacity-0 animate-fade-in-up [--animation-delay:0s]">
+                    Master Your Message: Rewrite with <span class="text-indigo-200">MoodMail AI</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-10 opacity-90 opacity-0 animate-fade-in-up [--animation-delay:0.2s]">
+                    Transform your emails and DMs to match any tone – from chill to savage, professional to flirty, dramatic to delightful. Communicate exactly how you mean to.
+                </p>
+                <a href="#cta-section" class="inline-block bg-white text-indigo-700 hover:bg-indigo-100 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out opacity-0 animate-fade-in-up [--animation-delay:0.4s]">
+                    Get Started Free
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-gray-900">
+                    Unleash Your Perfect Tone
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature Card 1: Chill Vibes -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 flex flex-col items-start">
+                        <div class="text-indigo-600 mb-4">
+                            <!-- SVG icon for 'Chill' - represented by a clock/timer for 'taking your time' -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Effortless Chill Vibes</h3>
+                        <p class="text-gray-700">Rewrite messages to be relaxed, friendly, and approachable. Perfect for casual chats or laid-back communication.</p>
+                    </div>
+                    <!-- Feature Card 2: Professionalism -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 flex flex-col items-start">
+                        <div class="text-indigo-600 mb-4">
+                            <!-- SVG icon for 'Professional' - represented by a document/report -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M16 16h.01"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Polished Professionalism</h3>
+                        <p class="text-gray-700">Craft articulate, formal, and impactful business communications that convey authority and clarity.</p>
+                    </div>
+                    <!-- Feature Card 3: Savage -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 flex flex-col items-start">
+                        <div class="text-indigo-600 mb-4">
+                            <!-- SVG icon for 'Savage' - represented by a lightning bolt -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Unleash Your Inner Savage</h3>
+                        <p class="text-gray-700">Inject bold, witty, or cutting remarks when the situation calls for it. Be sharp, be memorable.</p>
+                    </div>
+                    <!-- Feature Card 4: Flirty -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 flex flex-col items-start">
+                        <div class="text-indigo-600 mb-4">
+                            <!-- SVG icon for 'Flirty' - represented by a heart -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Flirty & Fun</h3>
+                        <p class="text-gray-700">Add a playful, charming, and engaging touch to your DMs, perfect for sparking interest.</p>
+                    </div>
+                    <!-- Feature Card 5: Dramatic -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 flex flex-col items-start">
+                        <div class="text-indigo-600 mb-4">
+                            <!-- SVG icon for 'Dramatic' - represented by an emoji with emotions -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Embrace the Drama</h3>
+                        <p class="text-gray-700">Amplify emotions and create powerful, memorable statements that leave a lasting impression.</p>
+                    </div>
+                    <!-- Feature Card 6: Intelligent Tone Control -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 flex flex-col items-start">
+                        <div class="text-indigo-600 mb-4">
+                            <!-- SVG icon for 'AI/Control' - represented by a control panel/settings -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Intelligent Tone Control</h3>
+                        <p class="text-gray-700">Our advanced AI understands context to deliver spot-on rewrites every time, ensuring your intent shines through.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-Action Section -->
+        <section id="cta-section" class="py-16 md:py-24 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+            <div class="container mx-auto px-4 text-center max-w-3xl">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+                    Ready to Express Yourself Flawlessly?
+                </h2>
+                <p class="text-lg md:text-xl opacity-90 mb-10">
+                    Stop overthinking every word. Let MoodMail AI empower your communication. Try it now and experience the difference.
+                </p>
+                <a href="#" class="inline-block bg-white text-indigo-700 hover:bg-indigo-100 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                    Start Rewriting Today
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-gray-300 py-12" id="contact">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-4 md:space-y-0 mb-8">
+                <a href="#" class="hover:text-white transition duration-300">About Us</a>
+                <a href="#" class="hover:text-white transition duration-300">Contact</a>
+                <a href="#" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition duration-300">Terms of Service</a>
+            </div>
+            <p class="text-sm">
+                &copy; 2023 MoodMail. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Toggle mobile menu visibility when button is clicked
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked for better mobile user experience
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden'); // Hide the menu
+                });
+            });
+
+            // Add animation delays using CSS custom properties for a more dynamic effect
+            // This needs to be done after DOMContentLoaded to ensure elements are present.
+            // Note: This relies on the custom property feature and not direct Tailwind delay utilities.
+            const heroHeadline = document.querySelector('#hero h1');
+            const heroSubheading = document.querySelector('#hero p');
+            const heroCta = document.querySelector('#hero a');
+
+            if (heroHeadline) heroHeadline.style.setProperty('--animation-delay', '0s');
+            if (heroSubheading) heroSubheading.style.setProperty('--animation-delay', '0.2s');
+            if (heroCta) heroCta.style.setProperty('--animation-delay', '0.4s');
+        });
+    </script>
+</body>
+</html>
