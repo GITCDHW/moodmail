@@ -1,0 +1,1 @@
+@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\nbody {\n  font-family: sans-serif;\n  margin: 0;\n  padding: 0;\n  background-color: #f4f4f7;\n  color: #333;\n}
