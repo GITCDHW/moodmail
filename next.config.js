@@ -1,1 +1,0 @@
-/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  // output: 'standalone', // Uncomment if deploying as a Docker container\n};\n\nmodule.exports = nextConfig;\n
