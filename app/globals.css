@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basic loader for a nicer loading state */
+.loader {
+  border-top-color: #3B82F6; /* blue-500 */
+  animation: spinner 1.0s linear infinite;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
